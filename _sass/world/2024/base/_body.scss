@@ -11,21 +11,44 @@ body {
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
 }
 
 #main-content {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  // margin-top: 68px;
+  width: 100%;
 }
 
-#logo {
-  width: 50rem;
-  max-width: 90vw;
-  height: auto;
-  margin-top: -10rem;
-  border-top: white solid 1px;
-  border-bottom: white solid 1px;
+.landing-page {
+  width: 100%;
+}
+
+.top-information-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-medium);
+  height: 320px;
+  border-bottom: white solid 2px;
+  padding-bottom: 9px;
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+    h3, 
+    h6, 
+    h7 {
+      color: white;
+      text-align: center;
+    }
+  }
 }
 
 .text-container {
