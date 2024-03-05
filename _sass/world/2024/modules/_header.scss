@@ -1,0 +1,68 @@
+//  var(--space-xx-large);
+
+.nav {
+    display: flex;
+    background-color: $red;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    border-bottom: 2px solid white;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3);
+    padding-left: var(--space-medium);
+    padding-right: var(--space-medium);
+
+    .sideContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 25%;
+        height: 100%;
+
+        &.right {
+            justify-content: flex-end;
+        }
+    }
+
+    &__logo {
+        .temp {
+            width: 130px;
+        }
+    }
+
+    .center {
+        display: flex;
+        align-items: center;    
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid $white;
+        border-bottom: 0;
+        border-top: 0;
+        width: 50%;
+        height: 100%;
+
+        h4, h5 {
+            color: $white;
+        }
+    }
+
+    a, p {
+        color: $white;
+    }
+
+    @media only screen and (max-width: 800px) {
+        background-color: blue;
+
+        .center {
+            background-color: $red;
+            width: 65%;
+        }
+    }
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
