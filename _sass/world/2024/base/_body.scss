@@ -25,36 +25,78 @@ body {
   width: 100%;
 }
 
+.content-container {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: var(--space-large) var(--space-xxx-large);
+
+  @media only screen and (max-width: 800px) {
+    padding: var(--space-medium) var(--space-large);
+  }
+}
+
 .top-information-card {
   position: relative;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 var(--space-medium);
-  height: 320px;
-  border-bottom: white solid 2px;
-  padding-bottom: 9px;
+  gap: 20px;
+  margin-top: -2rem;
 
-  .text-container {
+  .topLogo {
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .joinText {
+    margin-top: -10px;
+  }
+}
+
+.top-information-text {
+  border: white solid 2px;
+  border-left: 0;
+  border-right: 0;
+}
+
+.video-card {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: white solid 2px;
+  gap: 15px;
+
+  .textContainer {
     display: flex;
     flex-direction: column;
+    gap: 5px;
+  }
+
+  .videoContainer {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    
-    h3, 
-    h6, 
-    h7 {
-      color: white;
-      text-align: center;
+    width: 100%;
+
+    .videoFrame {
+      width: 80%;
+      aspect-ratio: 16 / 9;
+
+      @media only screen and (max-width: 800px) {
+        width: 100%;
+      }
     }
   }
 }
 
-.text-container {
-  color: white;
-  text-align: center;
-  margin-top: 1rem;
+.bottom-information-text {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: start;
+  background-color: rgba(255, 255, 255, 10%);
+  gap: 15px;
 }
 
 .link-container {
@@ -64,20 +106,20 @@ body {
   max-width: 90vw;
 }
 
-.buttons {
-  background-color: white;
-  color: #cb0c1c;
-  border-radius: 6pt;
-  padding: 1rem;
-  text-decoration: none;
-  max-width: 30rem;
-  position: relative;
-}
+// .buttons {
+//   background-color: white;
+//   color: #cb0c1c;
+//   border-radius: 6pt;
+//   padding: 1rem;
+//   text-decoration: none;
+//   max-width: 30rem;
+//   position: relative;
+// }
 
-.buttons:hover {
-  background-color: #e3dadc;
-  top: -1px;
-}
+// .buttons:hover {
+//   background-color: #e3dadc;
+//   top: -1px;
+// }
 
 .small-text {
   font-size: 1rem;
