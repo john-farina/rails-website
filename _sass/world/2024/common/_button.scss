@@ -1,16 +1,39 @@
 
 .button {
     background-color: var(--white);
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     border-radius: 8px;
-    color: var(--white);
+    color: var(--black);
     cursor: pointer;
     text-decoration: none;
     font-weight: var(--font-weight-800);
+    transition: box-shadow 0.15s ease;
+
+    &:hover {
+        box-shadow: 0px 4px 7px 0 rgba(0, 0, 0, 0.3);
+    }
 }
 
 .button.main {
-    background-color: var(--purple);
+    background: var(--purple);
+    color: var(--white);
     font-weight: var(--font-weight-400);
-    font-size: var(--type-small);
+    font-size: var(--type-medium);
+    transition: all 0.15s ease;
+
+    &:hover {
+        background: var(--purple-dark);
+        transform: translateY(-1px);
+    }
+}
+
+.link {
+    color: var(--white);
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: var(--purple-pale);
+        transform: translateY(-1px);
+        text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+    }
 }
