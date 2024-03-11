@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-color: #cb0c1c;
+  background-color: var(--red);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -12,12 +12,12 @@ body {
   align-items: center;
   min-height: 100vh;
   width: 100%;
+  overflow-x: hidden;
 }
 
 #main-content {
   display: flex;
   justify-content: center;
-  // margin-top: 68px;
   width: 100%;
 }
 
@@ -27,7 +27,7 @@ body {
 
 .content-container {
   display: flex;
-  color: white;
+  color: var(--text-color);
   text-align: center;
   padding: var(--space-large) var(--space-xxx-large);
 
@@ -55,7 +55,7 @@ body {
 }
 
 .top-information-text {
-  border: white solid 2px;
+  border: var(--border-style);
   border-left: 0;
   border-right: 0;
 }
@@ -64,7 +64,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border-bottom: white solid 2px;
+  border-bottom: var(--border-style);
   gap: 15px;
 
   .textContainer {
@@ -80,11 +80,26 @@ body {
     width: 100%;
 
     .videoFrame {
-      width: 80%;
+      width: 100%;
       aspect-ratio: 16 / 9;
+    }
+  }
 
-      @media only screen and (max-width: 800px) {
-        width: 100%;
+  // Desktop video view
+  @media only screen and (min-width: 900px) {
+    flex-direction: row;
+
+    .textContainer {
+      width: 40%;
+      text-align: start;
+    }
+
+    .videoContainer {
+      width: 60%;
+      justify-content: flex-end;
+
+      .videoFrame {
+        width: 80%;
       }
     }
   }
@@ -106,32 +121,6 @@ body {
   max-width: 90vw;
 }
 
-// .buttons {
-//   background-color: white;
-//   color: #cb0c1c;
-//   border-radius: 6pt;
-//   padding: 1rem;
-//   text-decoration: none;
-//   max-width: 30rem;
-//   position: relative;
-// }
-
-// .buttons:hover {
-//   background-color: #e3dadc;
-//   top: -1px;
-// }
-
 .small-text {
   font-size: 1rem;
-}
-
-footer {
-  color: white;
-  position: fixed;
-  bottom: 0;
-}
-
-footer a:visited {
-  color: white;
-  text-decoration: none;
 }

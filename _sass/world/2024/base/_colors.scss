@@ -1,4 +1,9 @@
-// todo - make this the same style as everywhere else var(--red)
-$red: #cb0c1c;
-$white: white;
-$purple: #4E2A73;
+:root {
+    --red: #cb0c1c;
+    --purple: #4E2A73;
+    --white: #ffffff;
+
+    --text-color: var(--white);
+    --border-style: 2px solid var(--white);
+  }
+  

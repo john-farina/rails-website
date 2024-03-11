@@ -1,16 +1,16 @@
 
 .button {
-    background-color: $white;
+    background-color: var(--white);
     padding: 1rem 2rem;
     border-radius: 8px;
-    color: $white;
+    color: var(--white);
     cursor: pointer;
     text-decoration: none;
     font-weight: var(--font-weight-800);
 }
 
 .button.main {
-    background-color: $purple;
+    background-color: var(--purple);
     font-weight: var(--font-weight-400);
     font-size: var(--type-small);
 }

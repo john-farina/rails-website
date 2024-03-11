@@ -1,32 +1,81 @@
-//  var(--space-xx-large);
 $headerHeight: 68px;
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+
+    #desktopHeader {
+        display: flex;
+    }
+
+    #mobileHeader {
+       display: none;
+    }
+
+    @media only screen and (max-width: 800px) {
+        #desktopHeader {
+            display: none;
+        }
+
+        #mobileHeader {
+            display: flex;
+        }
+    }
+}
+
+header.hideInitially {
+    visibility: hidden;
+    transform: translateY(-$headerHeight - 10px);
+    transition: transform 0.3s ease; 
+
+    &.scrolled {
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
 .nav {
-    display: flex;
-    background-color: $red;
+    background-color: var(--red);
     align-items: center;
     justify-content: space-between;
     height: $headerHeight;
-    border-bottom: 2px solid white;
+    border-bottom: var(--border-style);
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3);
-    padding-left: var(--space-medium);
-    padding-right: var(--space-medium);
 
     .sideContainer {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        width: 25%;
+        justify-content: center;
+        width: 220px;
         height: 100%;
+        border-right: var(--border-style);
 
         &.right {
-            justify-content: flex-end;
+            border-left: var(--border-style);
+            border-right: 0;
+        }
+
+        .headerDateText {
+            text-align: center;
+            font-size: 1.7rem;
+            line-height: 20px;
         }
     }
 
     &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
         .temp {
-            width: 130px;
+            width: 140px;
+        }
+
+        .longLogo {
+            width: 95%;
         }
     }
 
@@ -34,49 +83,26 @@ $headerHeight: 68px;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        border: 2px solid $white;
-        border-bottom: 0;
-        border-top: 0;
-        width: 50%;
         height: 100%;
 
         h4,
         h5 {
-            color: $white;
+            color: var(--white);
         }
     }
 
     a,
     p {
-        color: $white;
+        color: var(--white);
     }
-
-    @media only screen and (max-width: 800px) {
-        background-color: blue;
-
-        .center {
-            background-color: $red;
-            width: 65%;
-        }
-    }
-
 }
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-}
+#mobileHeader {
+    .sideContainer {
+        width: 120px;
+    }
 
-header.hideInitially {
-    visibility: hidden;
-    transform: translateY(-$headerHeight - 10px);
-    transition: transform 0.3s ease; 
-    
-    &.scrolled {
-        visibility: visible;
-        transform: translateY(0);
+    .center {
+        width: 400px;
     }
 }
