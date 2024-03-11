@@ -1,0 +1,85 @@
+.faqContainer {
+    width: 100%;
+
+    .titleContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: var(--desktop-padding);
+
+        h2 {
+            color: var(--text-color);
+        }
+    }
+
+    .questionsContainer {
+        padding: var(--desktop-padding);
+
+        h2 {
+            color: var(--white);
+        }
+
+        ul {
+            li~li {
+                margin-top: var(--space-small);
+            }
+
+            details {
+                // background-color: green;
+
+                summary {
+                    cursor: pointer;
+                    border: var(--border-style);
+                    color: var(--white);
+                    padding: var(--space-small);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-direction: row;
+                }
+
+                &[open] {
+                    summary svg {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                .faqAnswer {
+                    color: var(--black);
+                    background-color: var(--white);
+                    padding: var(--space-small);
+
+                    .answerText {
+                        font-size: var(--type-x-small);
+                    }
+                }
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            padding: var(--mobile-padding);
+        }
+    }
+}
+
+.sectionNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: var(--border-style);
+    border-left: 0;
+    border-right: 0;
+    height: 40px;
+    padding: var(--desktop-padding);
+    padding-top: var(--space-x-small);
+    ;
+    padding-bottom: var(--space-x-small);
+
+    @media only screen and (max-width: 800px) {
+        padding: var(--mobile-padding);
+        padding-top: var(--space-x-small);
+        ;
+        padding-bottom: var(--space-x-small);
+    }
+}

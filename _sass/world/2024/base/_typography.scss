@@ -9,6 +9,7 @@
 }
 
 h1 {
+  color: var(--text-color);
   font-size: var(--type-xxx-large);
   font-variation-settings: var(--font-weight-800);
 
@@ -19,6 +20,7 @@ h1 {
 }
 
 h2 {
+  color: var(--text-color);
   font-size: var(--type-xx-large);
   font-variation-settings: var(--font-weight-800);
 
@@ -29,6 +31,7 @@ h2 {
 }
 
 h3 {
+  color: var(--text-color);
   font-size: var(--type-x-large);
   font-variation-settings: var(--font-weight-800);
 
@@ -39,6 +42,7 @@ h3 {
 }
 
 h4 {
+  color: var(--text-color);
   font-size: var(--type-large);
 
   /* Extra small devices (phones, 600px and down) */
@@ -48,15 +52,17 @@ h4 {
 }
 
 h5 {
+  color: var(--text-color);
   font-size: var(--type-medium);
 
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
-  font-size: var(--type-small);
+    font-size: var(--type-small);
   }
 }
 
 h6 {
+  color: var(--text-color);
   font-size: var(--type-small);
 
   /* Extra small devices (phones, 600px and down) */
@@ -66,6 +72,7 @@ h6 {
 }
 
 p {
+  color: var(--text-color);
   line-height: 150%;
   font-variation-settings: var(--font-weight-600);
 

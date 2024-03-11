@@ -1,4 +1,4 @@
-$headerHeight: 68px;
+$headerHeight: 80px;
 
 header {
     position: sticky;
@@ -11,7 +11,7 @@ header {
     }
 
     #mobileHeader {
-       display: none;
+        display: none;
     }
 
     @media only screen and (max-width: 800px) {
@@ -28,7 +28,7 @@ header {
 header.hideInitially {
     visibility: hidden;
     transform: translateY(-$headerHeight - 10px);
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 
     &.scrolled {
         visibility: visible;
@@ -69,7 +69,7 @@ header.hideInitially {
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         .temp {
             width: 140px;
         }

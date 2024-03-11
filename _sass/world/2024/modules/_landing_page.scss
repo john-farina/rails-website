@@ -1,0 +1,107 @@
+.landing-page {
+    width: 100%;
+}
+
+.content-container {
+    display: flex;
+    color: var(--text-color);
+    text-align: center;
+    padding: var(--desktop-padding);
+
+    @media only screen and (max-width: 800px) {
+        padding: var(--mobile-padding);
+    }
+}
+
+.top-information-card {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -2rem;
+
+    .topLogo {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .joinText {
+        margin-top: -10px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        margin-top: -1rem;
+    }
+}
+
+.top-information-text {
+    border: var(--border-style);
+    border-left: 0;
+    border-right: 0;
+}
+
+.video-card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: var(--border-style);
+    gap: 15px;
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .videoContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .videoFrame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+    }
+
+    // Desktop video view
+    @media only screen and (min-width: 900px) {
+        flex-direction: row;
+
+        .textContainer {
+            width: 40%;
+            text-align: start;
+        }
+
+        .videoContainer {
+            width: 60%;
+            justify-content: flex-end;
+
+            .videoFrame {
+                width: 80%;
+            }
+        }
+    }
+}
+
+.bottom-information-text {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: start;
+    background-color: rgba(255, 255, 255, 10%);
+    gap: 15px;
+}
+
+.link-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2.5rem;
+    max-width: 90vw;
+}
+
+.small-text {
+    font-size: 1rem;
+}

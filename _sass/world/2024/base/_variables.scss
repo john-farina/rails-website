@@ -1,3 +1,8 @@
+:root {
+    --desktop-padding: var(--space-large) var(--space-xxx-large);
+    --mobile-padding:  var(--space-medium) var(--space-large);
+}
+
 $filter-black: invert(5%) sepia(18%) saturate(1397%) hue-rotate(314deg) brightness(95%) contrast(83%);
 $filter-grey: invert(97%) sepia(2%) saturate(669%) hue-rotate(314deg) brightness(96%) contrast(97%);
 $filter-red: invert(15%) sepia(95%) saturate(3482%) hue-rotate(354deg) brightness(82%) contrast(124%);
