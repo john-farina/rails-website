@@ -14,7 +14,16 @@
     }
 
     .questionsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-medium);
         padding: var(--desktop-padding);
+
+        .categoryContainer {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-small);
+        }
 
         h2 {
             color: var(--white);
@@ -26,22 +35,20 @@
             }
 
             details {
-                // background-color: green;
-
+                transition: all 0.15s ease-in;
                 summary {
                     cursor: pointer;
                     border: var(--border-style);
+                    border-radius: 5px;
                     color: var(--white);
                     padding: var(--space-small);
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     flex-direction: row;
-                }
 
-                &[open] {
-                    summary svg {
-                        transform: rotate(180deg);
+                    .summaryQuestion {
+                        font-size: var(--type-large);
                     }
                 }
 
@@ -49,10 +56,27 @@
                     color: var(--black);
                     background-color: var(--white);
                     padding: var(--space-small);
+                    border-radius: 0 0 5px 5px;
 
                     .answerText {
                         font-size: var(--type-x-small);
                     }
+                }
+
+                &[open] {
+                    summary {
+                        border-radius: 5px 5px 0 0;
+                    }
+
+                    summary svg {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 3%);
+                    transform: translateY(-1px);
+                    box-shadow: 0px 4px 7px 0 rgba(0, 0, 0, 0.3);
                 }
             }
         }
@@ -79,7 +103,6 @@
     @media only screen and (max-width: 800px) {
         padding: var(--mobile-padding);
         padding-top: var(--space-x-small);
-        ;
         padding-bottom: var(--space-x-small);
     }
 }

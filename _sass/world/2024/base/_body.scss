@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-color: var(--red);
+  background-color: var(--purple);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ body {
 }
 
 :focus {
-  outline-color: var(--purple-medium);
+  outline-color: var(--red);
   outline-offset: 2px;
 }
 
