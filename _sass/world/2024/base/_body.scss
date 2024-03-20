@@ -24,4 +24,23 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+
+  .legalContainer {
+    color: var(--white);
+    padding: var(--desktop-padding);
+    display: flex;
+    flex-direction: column;
+    
+    a {
+      color: var(--white);
+    }
+
+    p {
+      margin-bottom: var(--space-small);
+    }
+
+    @media only screen and (max-width: 800px) {
+      padding: var(--mobile-padding);
+    }
+  }
 }

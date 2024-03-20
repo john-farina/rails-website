@@ -3,7 +3,7 @@ footer {
     background-color: var(--purple);
     align-items: center;
     justify-content: space-between;
-    height: 58px;
+    height: 75px;
     border-top: var(--border-style);
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3);
     padding-left: var(--space-small);
@@ -27,7 +27,8 @@ footer {
         align-items: center;
         justify-content: center;
         height: 100%;
-
+        flex-direction: column;
+        gap: 10px;
         .textContainer {
             width: 80%;
 
@@ -44,12 +45,20 @@ footer {
             }
         }
 
+        .legalContainer {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
         a {
             color: var(--text-color);
             transition: all 0.2s ease;
 
             &:hover {
-                color: var(--purple);
+                color: var(--red);
             }
         }
     }

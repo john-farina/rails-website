@@ -36,6 +36,11 @@
 
             details {
                 transition: all 0.15s ease-in;
+
+                svg {
+                    width: 100px;
+                }
+
                 summary {
                     cursor: pointer;
                     border: var(--border-style);
@@ -53,13 +58,17 @@
                 }
 
                 .faqAnswer {
+                    display: flex;
+                    flex-direction: column;
                     color: var(--black);
                     background-color: var(--white);
-                    padding: var(--space-small);
                     border-radius: 0 0 5px 5px;
-
-                    .answerText {
-                        font-size: var(--type-x-small);
+                    font-size: var(--type-x-small);
+                    padding: var(--space-medium);
+                    gap: 5px;
+                    
+                    a {
+                        color: var(--purple);
                     }
                 }
 
