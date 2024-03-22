@@ -3,9 +3,5 @@
     --mobile-padding:  var(--space-medium) var(--space-large);
 }
 
-$filter-black: invert(5%) sepia(18%) saturate(1397%) hue-rotate(314deg) brightness(95%) contrast(83%);
-$filter-grey: invert(97%) sepia(2%) saturate(669%) hue-rotate(314deg) brightness(96%) contrast(97%);
-$filter-red: invert(15%) sepia(95%) saturate(3482%) hue-rotate(354deg) brightness(82%) contrast(124%);
-$filter-dark-red: brightness(0) saturate(100%) invert(13%) sepia(99%) saturate(3263%) hue-rotate(351deg) brightness(95%) contrast(98%);
-$filter-white: brightness(0) invert(1);
 $filter-dark-purple: brightness(0) saturate(100%) invert(17%) sepia(34%) saturate(1978%) hue-rotate(238deg) brightness(95%) contrast(98%);
+$filter-purple: brightness(0) saturate(100%) invert(18%) sepia(74%) saturate(757%) hue-rotate(229deg) brightness(94%) contrast(96%);

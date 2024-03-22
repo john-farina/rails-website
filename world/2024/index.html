@@ -4,24 +4,26 @@ permalink: /world/2024
 ---
 
 <div class="landing-page">
-    <section class="content-container top-information-card">
-        <!-- Common background? -->
-        <!-- <div class="common-shape--top-white-up-left-container bubble"></div> -->
 
+    <section class="content-container top-information-card">
         <img class="topLogo" alt="Rails World 2024 logo"
             src="/assets/world/2024/railsred-mono-logo-square-dated-location.svg" />
-
-        <h3 class="joinText">
-            Shaping the future of Ruby on Rails
-        </h3>
-
-        <a href="" class="button main large">Tickets</a>
     </section>
+    <!-- TODO: weird spacing for desktop here -->
+    <div class="halfContainer common-shape--top-purple-down-left">
+        <section class="content-container top-information-card">
+            <h3 class="joinText">
+                Shaping the future of Ruby on Rails
+            </h3>
+
+            <a href="" class="button main large">Tickets</a>
+        </section>
+    </div>
 
     <section class="content-container top-information-text">
         <p>
             Rails World is a two-day, two track community conference featuring technical
-            talks, demos, networking, and keynotes about the latest features and best 
+            talks, demos, networking, and keynotes about the latest features and best
             practices in Rails development.
         </p>
     </section>
@@ -29,9 +31,9 @@ permalink: /world/2024
     <section class="content-container sponsor-information-text">
         <h3>Sponsors</h3>
         <p>
-            Sponsoring Rails World means showcasing your brand 
-            to a global audience of Rails enthusiasts, developers, 
-            and industry leaders. Let's make Rails World an 
+            Sponsoring Rails World means showcasing your brand
+            to a global audience of Rails enthusiasts, developers,
+            and industry leaders. Let's make Rails World an
             unforgettable experience for all. 
         </p>
         <a href="" class="button main large">VIEW PROSPECTUS</a>
@@ -47,13 +49,6 @@ permalink: /world/2024
             </p>
         </div>
 
-        <!-- Turn into a image slide show -->
-        <!-- https://www.w3schools.com/w3css/w3css_slideshow.asp -->
-        <div class="videoContainer">
-            <iframe class="videoFrame" src="https://www.youtube.com/embed/88aDJFdUjH4?si=NbiBFLOeRB4iTalU"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
+        {% include world/2024/slideshow.html %}
     </section>
 </div>

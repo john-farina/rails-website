@@ -9,6 +9,7 @@
     font-size: var(--type-medium);
     transition: box-shadow 0.15s ease;
     font-style: normal;
+    transition: all 0.15s ease;
 
     &:hover {
         box-shadow: 0px 4px 7px 0 rgba(0, 0, 0, 0.3);
@@ -24,12 +25,57 @@
     background: var(--red);
     color: var(--white);
     font-weight: var(--font-weight-400);
-    transition: all 0.15s ease;
     text-transform: uppercase;
     
     &:hover {
         background: var(--red);
         transform: translateY(-1px);
+    }
+}
+
+.button.dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--white);
+    opacity: 0.8;
+
+    &.active {
+        background-color: var(--red);
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.button.slideShow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    padding: 0;
+    height: 40px;
+    background-color: var(--red);
+    color: var(--white);
+    border: var(--border-style);
+    border-width: 1px;
+    opacity: 0.8;
+
+    .arrowSvg {
+        width: 40%;
+        filter: invert(100%);
+    }
+
+    &.left {
+        .arrowSvg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &:hover {
+        opacity: 0.95;
     }
 }
 
