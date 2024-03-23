@@ -48,9 +48,19 @@
                     color: var(--white);
                     padding: var(--space-small);
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     align-items: center;
                     flex-direction: row;
+                    gap: 10px;
+
+                    .faqArrow {
+                        width: 23px;
+                        min-width: 23px;
+                        max-width: 23px;
+                        filter: invert(1);
+                        transform: rotate(90deg);
+                        transition: transform 0.2s linear;
+                    }
 
                     .summaryQuestion {
                         font-size: var(--type-large);
@@ -75,10 +85,10 @@
                 &[open] {
                     summary {
                         border-radius: 5px 5px 0 0;
-                    }
 
-                    summary svg {
-                        transform: rotate(180deg);
+                        .faqArrow {
+                            transform: rotate(-90deg);
+                        }
                     }
                 }
 
@@ -103,15 +113,21 @@
     border: var(--border-style);
     border-left: 0;
     border-right: 0;
-    height: 40px;
     padding: var(--desktop-padding);
-    padding-top: var(--space-x-small);
-    ;
-    padding-bottom: var(--space-x-small);
+    padding-top: var(--space-small);
+    padding-bottom: var(--space-small);
 
-    @media only screen and (max-width: 800px) {
+    @media screen and (max-width: 800px) {
         padding: var(--mobile-padding);
         padding-top: var(--space-x-small);
         padding-bottom: var(--space-x-small);
+    }
+
+    // Actual phone size
+    @media only screen and (max-width: 500px) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: var(--mobile-padding);
     }
 }

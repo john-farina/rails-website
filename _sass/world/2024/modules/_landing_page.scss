@@ -94,6 +94,7 @@
             position: relative;
             width: 100%;
             height: 100%;
+            box-shadow: 6px 6px 2px var(--purple-dark);
 
             .textContainer {
                 background-color: rgba(255, 255, 255, 0.3);
@@ -123,7 +124,7 @@
         }
     }
 
-    // Desktop video view
+    // Desktop slideShow view
     @media only screen and (min-width: 900px) {
         flex-direction: row;
 

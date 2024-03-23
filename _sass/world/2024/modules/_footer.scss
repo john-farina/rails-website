@@ -16,6 +16,29 @@ footer {
         height: 100%;
         border-right: var(--border-style);
 
+        .footerLegalContainer {
+            height: 100%;
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                text-align: center;
+            }
+
+
+            @media screen and (max-width: 800px) {
+                gap: 7px;
+                
+                a {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
         &.right {
             border-left: var(--border-style);
             border-right: 0;
@@ -29,6 +52,7 @@ footer {
         height: 100%;
         flex-direction: column;
         gap: 10px;
+        
         .textContainer {
             width: 80%;
 
@@ -43,14 +67,6 @@ footer {
                     font-size: 0.95rem;
                 }
             }
-        }
-
-        .footerLegalContainer {
-            display: flex;
-            gap: 10px;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
         }
 
         a {

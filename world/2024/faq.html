@@ -16,10 +16,10 @@ assign faqData = site.data.world['2024'].faq %} {% assign categories = faqData |
             <h2>Frequently Asked Questions</h1>
         </div>
 
-        <div class="sectionNav"> 
+        <div class="sectionNav">
             {% for category in categories %}
-                {% assign categoryId = category | split: " " | first | downcase %}
-                <a href="#{{ categoryId }}" class="link categoryButton">{{ category }}</a>
+            {% assign categoryId = category | split: " " | first | downcase %}
+            <a href="#{{ categoryId }}" class="link categoryButton">{{ category }}</a>
             {% endfor %}
         </div>
     </section>
@@ -33,7 +33,8 @@ assign faqData = site.data.world['2024'].faq %} {% assign categories = faqData |
                 {% for topic in faqGroup.topics %}
                 <li>
                     <details>
-                        <summary>
+                        <summary class="faqQuestion">
+                            <img src="/assets/world/2024/images/arrow.svg" class="faqArrow" alt="Arrow">
                             <p class="summaryQuestion">
                                 {{ topic.question }}
                             </p>
@@ -55,17 +56,17 @@ assign faqData = site.data.world['2024'].faq %} {% assign categories = faqData |
 <!-- Script to adjust the scrollTo based of header height -->
 <script>
     const allATags = document.getElementsByClassName('categoryButton');
-  
-    for (let i = 0; i < allATags.length; i++) {
-        allATags[i].addEventListener('click', function(event) {
-            event.preventDefault(); 
 
-            const targetId = allATags[i].getAttribute('href');            
+    for (let i = 0; i < allATags.length; i++) {
+        allATags[i].addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const targetId = allATags[i].getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             const headerHeight = document.getElementById('header-2024').offsetHeight;
             const targetPosition = targetElement.offsetTop - headerHeight - 5;
-    
+
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -75,4 +76,4 @@ assign faqData = site.data.world['2024'].faq %} {% assign categories = faqData |
             targetElement.focus();
         });
     }
-  </script>
+</script>
