@@ -1,14 +1,89 @@
 footer {
     display: flex;
+    height: 75px;
+    width: 100%;
+
+    .desktopFooter {
+        display: flex;
+    }
+
+    .mobileFooter {
+        display: none;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .desktopFooter {
+            display: none;
+        }
+
+        .mobileFooter {
+            display: flex;
+        }
+    }
+}
+
+footer {
     background-color: var(--purple);
     align-items: center;
     justify-content: space-between;
-    height: 75px;
     border-top: var(--border-style);
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3);
     padding-left: var(--space-small);
-    width: 100%;
     box-shadow: 0px -5px 10px 0 rgba(0, 0, 0, 0.2);
+
+    .footerContainer {
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+    }
+
+    .footerLegalContainer {
+        height: 100%;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            text-align: center;
+        }
+    }
+
+    .textContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            color: var(--white);
+        }
+
+        p {
+            color: var(--text-color);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 100;
+            font-style: normal;
+
+            @media only screen and (max-width: 800px) {
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+    .socialLinks {
+        display: flex;
+
+        a {
+            svg {
+                width: 15px;
+                fill: var(--white);
+            }
+        }
+    }
 
 
     .sideContainer {
@@ -17,24 +92,24 @@ footer {
         border-right: var(--border-style);
 
         .footerLegalContainer {
-            height: 100%;
-            gap: 5px;
-            display: flex;
+            gap: 7px;
             flex-direction: column;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
 
             a {
-                text-align: center;
+                font-size: 0.9rem;
             }
+        }
 
+        .socialLinks {
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            // flex-direction: column;
+            gap: 5px;
 
-            @media screen and (max-width: 800px) {
-                gap: 7px;
-                
-                a {
-                    font-size: 0.9rem;
+            a {
+                svg {
+                    width: 25px;
                 }
             }
         }
@@ -45,37 +120,39 @@ footer {
         }
     }
 
+
     .center {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
         flex-direction: column;
-        gap: 10px;
-        
-        .textContainer {
-            width: 80%;
-
-            p {
-                color: var(--text-color);
-                text-align: center;
-                font-size: 1.1rem;
-                font-weight: 100;
-                font-style: normal;
-
-                @media only screen and (max-width: 800px) {
-                    font-size: 0.95rem;
-                }
-            }
-        }
+        // gap: 10px;
 
         a {
             color: var(--text-color);
             transition: all 0.2s ease;
+        }
 
-            &:hover {
-                color: var(--red);
+        .footerLegalContainer {
+            gap: 35px;
+            margin-bottom: 4px;
+
+            a {
+                font-size: var(--type-x-small);
             }
+        }
+
+        .socialLinks {
+            position: absolute;
+            bottom: 0;
+            gap: 10px;
+        }
+
+        .textContainer {
+            // background-color: cyan;
+            width: 80%;
         }
     }
 
@@ -89,4 +166,13 @@ footer {
         }
     }
 
+    .mobileFooter {
+        .sideContainer {
+            width: 120px;
+        }
+
+        .center {
+            width: 400px;
+        }
+    }
 }
