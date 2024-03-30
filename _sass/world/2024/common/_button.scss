@@ -55,6 +55,13 @@
     }
 }
 
+.button.my-button {
+    &:hover {
+        background-color: rgb(19, 19, 19);
+        color: rgb(246, 245, 240);
+    }
+}
+
 .button.dot {
     width: 9px;
     height: 9px;
