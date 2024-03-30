@@ -23,12 +23,8 @@
 
     .topLogo {
         width: 80%;
-        max-width: 700px;
+        max-width: 560px;
         min-width: 500px;
-    }
-
-    .joinText {
-        margin-top: -30px;
     }
 
     @media only screen and (max-width: 800px) {
@@ -40,17 +36,32 @@
         .topLogo {
             display: none;
         }
-
-        .joinText {
-            font-size: var(--type-xx-large);
-        }
     }
 }
 
-.halfContainer {
+.half-container {
+    padding-top: var(--space-small);
     background-color: var(--purple-dark);
     width: 100%;
     position: relative;
+
+    .joinText {
+        position: absolute;
+        top: 0;
+        margin-top: -30px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .joinText {
+            position: relative;
+            font-size: var(--type-xx-large);
+            margin-top: 0;
+        }
+    }
+
+    @media only screen and (min-width: 1400px) {
+        padding-bottom: 10px;
+    }
 }
 
 .top-information-text {
@@ -75,13 +86,13 @@
 
     .slideshowContainer {
         position: relative;
-        display: flex; 
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 500px;
         gap: 10px;
-        
+
         .dotsContainer {
             display: flex;
             gap: 5px;
@@ -115,7 +126,7 @@
             }
         }
 
-        @media screen and (max-width: 800px){
+        @media screen and (max-width: 800px) {
             width: 100%;
         }
     }

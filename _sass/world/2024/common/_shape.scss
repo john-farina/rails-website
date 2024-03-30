@@ -1,6 +1,5 @@
 .common-shape {
   &--top-purple-down-left {
-
     &:after {
       filter: $filter-purple;
     }
@@ -8,11 +7,9 @@
     &:before {
       filter: $filter-purple;
     }
-
   }
 
   &--top-purple-down-left {
-
     &:before {
       background-position: left top;
       background-repeat: no-repeat;
@@ -25,7 +22,6 @@
       top: -1px;
       width: 100%;
     }
-
   }
 
   &--top-purple-down-left:before {

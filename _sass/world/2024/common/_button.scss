@@ -26,10 +26,32 @@
     color: var(--white);
     font-weight: var(--font-weight-400);
     text-transform: uppercase;
-    
+
     &:hover {
         background: var(--red);
         transform: translateY(-1px);
+    }
+}
+
+.button.main.disabled {
+    opacity: 0.7;
+    cursor: default;
+
+    &:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+.button.x-small {
+    padding: 0.35rem 0.5rem;
+    font-size: var(--type-x-small);
+    background-image: none;
+    padding-right: 0.28rem;
+    border-radius: 4px;
+
+    &:hover {
+        color: var(--white);
     }
 }
 
