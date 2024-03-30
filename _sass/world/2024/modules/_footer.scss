@@ -6,6 +6,13 @@ footer {
     .desktopFooter {
         display: flex;
     }
+
+    // Larger for desktop
+    @media screen and (min-width: 800px) {
+        .desktopFooter {
+            height: 95px;
+        }
+    }
 }
 
 footer {
@@ -94,7 +101,7 @@ footer {
             p {
                 color: var(--text-color);
                 text-align: center;
-                font-size: var(--type-x-small);
+                font-size: var(--type-xx-small);
                 font-weight: var(--font-weight-400);
 
                 @media only screen and (max-width: 800px) {
