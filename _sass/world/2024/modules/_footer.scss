@@ -53,7 +53,7 @@ footer {
             align-items: center;
             justify-content: center;
             height: 100%;
-            gap: 5px;
+            gap: 15px;
 
             a {
                 svg {
@@ -74,6 +74,12 @@ footer {
         &.right {
             border-left: var(--border-style);
             border-right: 0;
+        }
+
+        @media screen and (max-width: 800px) {
+            .socialLinks {
+                gap: 5px;
+            }
         }
     }
 
