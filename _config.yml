@@ -16,9 +16,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  # Remove this node_modules exclude before making public
-  # This is only here to make development faster
-  - node_modules
 
 collections:
   pages:
