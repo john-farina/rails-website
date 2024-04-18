@@ -13,9 +13,17 @@ permalink: /world/2024
                 Shaping the future of Ruby on Rails
             </h3>
 
-            <a role="link" aria-disabled="false" aria-label="Tickets" class="button main large">
+            <button id="titto-ticket-btn" aria-hidden="false" aria-label="Tickets" onclick="openCloseTitto(true)"
+                class="button main large">
                 Tickets
-            </a>
+            </button>
+            <div id="titto-container" class="hidden" aria-hidden="true">
+                <button aria-label="Tickets" onclick="openCloseTitto(false)" class="button main large back-btn">
+                    Close
+                </button>
+                <tito-widget style="width: 100%; background-color: transparent;" event="ultimateconf/2013"
+                    tabindex="0"></tito-widget>
+            </div>
         </section>
     </div>
 
@@ -52,3 +60,23 @@ permalink: /world/2024
         {% include world/2024/slideshow.html %}
     </section>
 </div>
+<script lang="ts">
+    function openCloseTitto(openOrClose) {
+        const tittoContainer = document.getElementById('titto-container');
+        const tittoBtn = document.getElementById('titto-ticket-btn');
+
+        if (tittoContainer) {
+            if (openOrClose === true) {
+                tittoContainer.classList.remove('hidden');
+                tittoContainer.setAttribute('aria-hidden', 'false');
+                tittoBtn.style.display = 'none';
+                tittoBtn.setAttribute('aria-hidden', 'true');
+            } else {
+                tittoBtn.style.display = 'flex';
+                tittoBtn.setAttribute('aria-hidden', 'false');
+                tittoContainer.classList.add('hidden');
+                tittoContainer.setAttribute('aria-hidden', 'true');
+            }
+        }
+    }
+</script>
