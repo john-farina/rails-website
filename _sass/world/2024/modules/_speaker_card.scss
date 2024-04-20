@@ -1,0 +1,97 @@
+.speakerCard {
+    position: relative;
+    background-color: var(--white);
+    width: 225px;
+    min-width: 225px;
+    height: 315px;
+    min-height: 315px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+
+    .cardBackground {
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        .line {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: var(--blue);
+        }
+    }
+
+    .contentContainer {
+        border: 2px solid var(--blue);
+        border-left: 0;
+        border-right: 0;
+        z-index: 50;
+        background-color: var(--white);
+        width: 80%;
+        height: 80%;
+        color: var(--black);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+
+        $padding: 20px;
+
+        .photoContainer {
+            padding-top: $padding;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // height: 70%;
+            width: 100%;
+            // background-color: green;
+
+            .speakerPhoto {
+                $size: 140px;
+
+                border-radius: 50%;
+                // margin-top: 10px;
+                width: $size;
+                height: $size;
+                background-color: var(--purple);
+            }
+        }
+
+        .nameContainer {
+            padding-bottom: $padding;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            // height: 30%;
+            width: 100%;
+            gap: 5px;
+            // background-color: red;
+
+            .name {
+                font-size: var(--type-large);
+                color: var(--red);
+            }
+
+            .role {
+                // set all capital letters with 
+                text-transform: uppercase;
+                font-weight: 600;
+                word-spacing: 1px;
+                line-height: 0.9;
+                font-size: xx-small;
+
+                font-size: var(--type-xx-small);
+            }
+        }
+    }
+}
