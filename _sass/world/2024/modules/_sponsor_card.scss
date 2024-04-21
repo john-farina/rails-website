@@ -70,6 +70,10 @@
             height: 65%;
         }
     }
+
+    @media screen and (max-width: 500px) {
+        height: 185px;
+    }
 }
 
 .sponsorCard.gold {
@@ -92,7 +96,7 @@
 
     // Actual phone size
     @media screen and (max-width: 500px) {
-        width: 115px;
-        height: 115px;
+        width: 100px;
+        height: 100px;
     }
 }
