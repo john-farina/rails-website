@@ -1,0 +1,95 @@
+<section class="content-container speaker-cards">
+    <div class="headerContainer">
+        <div class="textContainer">
+            <h3>Speakers</h3>
+            <p>
+                Our industry's brightest speakers gathered in Toronto to share their expertise, insights, and success
+                stories.
+            </p>
+        </div>
+        <div class="buttonsContainer">
+            <button id="leftBtn" aria-label="scroll carousel backward">
+                <img src="/assets/world/2023/previous.svg">
+            </button>
+            <button id="rightBtn" aria-label="scroll carousel forward">
+                <img src="/assets/world/2023/next.svg">
+            </button>
+        </div>
+    </div>
+    <div class="cardsContainer">
+        {%
+        include world/2024/speaker-card.html
+        name="John Farina 1"
+        role="Engineer 1"
+        company="Reprise 1"
+        %}
+        {%
+        include world/2024/speaker-card.html
+        name="John Farina 2"
+        role="Engineer 2"
+        company="Reprise 2"
+        %}
+        {%
+        include world/2024/speaker-card.html
+        name="John Farina 3"
+        role="Engineer 3"
+        company="Reprise 3"
+        %}
+        {%
+        include world/2024/speaker-card.html
+        name="John Farina 4"
+        role="Engineer 4"
+        company="Reprise 4"
+        %}
+    </div>
+</section>
+<script>
+    const container = document.querySelector('.cardsContainer');
+    const cards = document.querySelectorAll('.speakerCard');
+    let currentIndex = null;
+
+    leftBtn.addEventListener('click', () => {
+        scrollToIndex("back");
+    });
+    rightBtn.addEventListener('click', () => {
+        scrollToIndex("forward");
+    });
+
+    function addClassToActiveCard(activeIndex) {
+        cards.forEach((card, index) => {
+            if (index === activeIndex) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+    }
+
+    function scrollToIndex(type) {
+        if (type === "forward") {
+            if (currentIndex === null) {
+                currentIndex = 0;
+            } else if (currentIndex === cards.length - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+        } else if (type === "back") {
+            if (currentIndex === null) {
+                currentIndex = cards.length - 1;
+            } else if (currentIndex === 0) {
+                currentIndex = cards.length - 1;
+            } else {
+                currentIndex--;
+            }
+        }
+
+        const currentCard = cards[currentIndex];
+        addClassToActiveCard(currentIndex);
+        
+        container.scrollTo({
+            left: currentCard.offsetLeft,
+            behavior: 'smooth'
+        });
+    }
+</script>

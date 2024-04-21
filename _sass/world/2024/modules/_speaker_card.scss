@@ -10,6 +10,12 @@
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
+    z-index: 100;
+    overflow-y: visible;
+
+    &.active {
+        box-shadow: 0px 0px 5px 1px var(--purple);
+    }
 
     .cardBackground {
         z-index: 1;
@@ -44,22 +50,19 @@
         justify-content: space-between;
 
 
-        $padding: 20px;
+        $padding: 25px;
 
         .photoContainer {
             padding-top: $padding;
             display: flex;
             align-items: center;
             justify-content: center;
-            // height: 70%;
             width: 100%;
-            // background-color: green;
 
             .speakerPhoto {
                 $size: 140px;
 
                 border-radius: 50%;
-                // margin-top: 10px;
                 width: $size;
                 height: $size;
                 background-color: var(--purple);
@@ -72,10 +75,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            // height: 30%;
             width: 100%;
             gap: 5px;
-            // background-color: red;
 
             .name {
                 font-size: var(--type-large);
@@ -83,14 +84,30 @@
             }
 
             .role {
-                // set all capital letters with 
                 text-transform: uppercase;
                 font-weight: 600;
                 word-spacing: 1px;
                 line-height: 0.9;
                 font-size: xx-small;
-
                 font-size: var(--type-xx-small);
+            }
+        }
+    }
+
+    // Desktop size
+    @media screen and (min-width: 800px) {
+        width: 255px;
+        min-width: 255px;
+        height: 365px;
+        min-height: 365px;
+
+        .contentContainer {
+            .photoContainer {
+                .speakerPhoto {
+                    $size: 175px;
+                    width: $size;
+                    height: $size;
+                }
             }
         }
     }
