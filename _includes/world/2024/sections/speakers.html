@@ -55,39 +55,44 @@
         scrollToIndex("forward");
     });
 
+    function setCurrentIndex(type) {
+        if (type === "forward") {
+            if (currentIndex === null || currentIndex === cards.length - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+        } else if (type === "back") {
+            if (currentIndex === null || currentIndex === 0) {
+                currentIndex = cards.length - 1;
+            } else {
+                currentIndex--;
+            }
+        }
+    }
+
     function addClassToActiveCard(activeIndex) {
         cards.forEach((card, index) => {
             if (index === activeIndex) {
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('aria-label', 'active speaker');
                 card.classList.add('active');
             } else {
+                card.setAttribute('tabindex', '-1');
+                card.setAttribute('aria-label', 'inactive speaker');
                 card.classList.remove('active');
             }
         });
     }
 
     function scrollToIndex(type) {
-        if (type === "forward") {
-            if (currentIndex === null) {
-                currentIndex = 0;
-            } else if (currentIndex === cards.length - 1) {
-                currentIndex = 0;
-            } else {
-                currentIndex++;
-            }
-        } else if (type === "back") {
-            if (currentIndex === null) {
-                currentIndex = cards.length - 1;
-            } else if (currentIndex === 0) {
-                currentIndex = cards.length - 1;
-            } else {
-                currentIndex--;
-            }
-        }
+        setCurrentIndex(type);
 
         const currentCard = cards[currentIndex];
+
         addClassToActiveCard(currentIndex);
-        
-        container.scrollTo({
+
+        container.scroll({
             left: currentCard.offsetLeft,
             behavior: 'smooth'
         });
