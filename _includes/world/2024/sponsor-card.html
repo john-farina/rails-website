@@ -1,20 +1,32 @@
-{% if include.rank == "platinum" %}
-<!-- <a href="sponsorBtn platinum"> -->
-<div class="sponsorCard platinum">
-    <div class="background">
-        <div class="line"></div>
-    </div>
-    <div class="logoContainer">
-        <img src="{{ include.logo }}" alt="{{ include.name }}">
-    </div>
-</div>
-<!-- </a> -->
-{% endif %}
 
-{% if include.rank == "gold" %}
-<div class="sponsorCard gold">
+<div 
+    role="button" 
+    tabindex="0" 
+    id="{{ include.name }}Card"
+    aria-label="Go to {{ include.name }}'s website" 
+    class="sponsorCard {{ include.rank }}"
+    title="{{ include.name }}"
+    onclick="window.open('{{ include.url }}', '_blank')"
+>
+    {% if include.rank == "platinum" %}
+        <div class="background">
+            <div class="line"></div>
+        </div>
+    {% endif %}
+
     <div class="logoContainer">
-        <img src="{{ include.logo }}" alt="{{ include.name }}">
+        <img src="{{ include.logo }}" alt="{{ include.name }}" loading="lazy">
     </div>
 </div>
-{% endif %}
+<script>
+    document.getElementById('{{ include.name }}Card')
+        .addEventListener('keydown', (e) => {
+            onkeydown(e, '{{ include.url }}');
+        });
+
+    function onkeydown(e, url) {
+       if (e.key === " " || e.key === "Enter" || e.key === "Spacebar") {
+            window.open(url, '_blank')
+        }
+    }
+</script>

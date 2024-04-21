@@ -5,22 +5,25 @@
     position: relative;
     background-color: var(--white);
     border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
 
     .logoContainer {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-}
 
-.sponsorBtn {
-    all: unset;
+    &:hover {
+        box-shadow: 0px 4px 7px 0 rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+    }
 }
 
 .sponsorCard.platinum {
     height: 195px;
     width: 33%;
-    max-width: 750px;
+    max-width: 700px;
 
     .background {
         display: flex;
@@ -45,9 +48,18 @@
         width: 80%;
         background-color: var(--white);
         z-index: 10;
+        transition: all 0.25s ease;
+        position: relative;
 
         img {
+            position: absolute;
             width: 85%;
+        }
+    }
+
+    &:hover {
+        .logoContainer {
+            height: 75%;
         }
     }
 
