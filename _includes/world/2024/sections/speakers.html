@@ -1,3 +1,8 @@
+{%- comment -%} {% assign sorted_speakers = site.world_speakers | where_exp: 'item', 'item.path contains "2024"' | sort: 'last_name' %} {%- endcomment -%}
+{% assign sorted_speakers = site.world_speakers | where_exp: 'item', 'item.path contains "2023"' | sort: 'last_name' %}
+{% assign keynote_speakers = sorted_speakers | where: 'keynote', true %}
+{% assign non_keynote_speakers = sorted_speakers | where_exp: "speaker", "speaker.keynote != true" | sort: "first_name" %}
+
 <section class="content-container speaker-cards">
     <div class="headerContainer">
         <div class="textContainer">
@@ -17,30 +22,26 @@
         </div>
     </div>
     <div class="cardsContainer">
-        {%
-        include world/2024/speaker-card.html
-        name="John Farina 1"
-        role="Engineer 1"
-        company="Reprise 1"
-        %}
-        {%
-        include world/2024/speaker-card.html
-        name="John Farina 2"
-        role="Engineer 2"
-        company="Reprise 2"
-        %}
-        {%
-        include world/2024/speaker-card.html
-        name="John Farina 3"
-        role="Engineer 3"
-        company="Reprise 3"
-        %}
-        {%
-        include world/2024/speaker-card.html
-        name="John Farina 4"
-        role="Engineer 4"
-        company="Reprise 4"
-        %}
+        {% for speaker in keynote_speakers %}
+            {%
+            include world/2024/speaker-card.html
+            first_name=speaker.first_name 
+            last_name=speaker.last_name
+            role=speaker.role
+            company=speaker.company
+            photo=speaker.image_path
+            %}
+        {% endfor %}
+        {% for speaker in non_keynote_speakers %}
+            {%
+            include world/2024/speaker-card.html
+            first_name=speaker.first_name 
+            last_name=speaker.last_name
+            role=speaker.role
+            company=speaker.company
+            photo=speaker.image_path
+            %}
+        {% endfor %}
     </div>
 </section>
 <script>
@@ -89,11 +90,12 @@
         setCurrentIndex(type);
 
         const currentCard = cards[currentIndex];
-
         addClassToActiveCard(currentIndex);
 
+        const scrollLeft = currentCard.offsetLeft - container.offsetLeft;
+
         container.scroll({
-            left: currentCard.offsetLeft,
+            left: scrollLeft,
             behavior: 'smooth'
         });
     }

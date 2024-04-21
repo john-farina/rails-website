@@ -5,12 +5,14 @@
 
     <div class="contentContainer">
         <div class="photoContainer">
-            <div class="speakerPhoto"></div>
+            <div class="speakerPhoto">
+                <img src="{{ include.photo }}" alt="{{ include.first_name }} {{ include.last_name }}'s photo">
+            </div>
         </div>
 
         <div class="nameContainer">
             <h5 class="name">
-                {{ include.name }}
+                {{ include.first_name }} {{ include.last_name }}
             </h5>
 
             <p class="role">{{ include.role }}, {{ include.company }}</p>

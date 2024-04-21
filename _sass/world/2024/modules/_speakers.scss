@@ -38,6 +38,8 @@
                 justify-content: center;
                 background-color: transparent;
                 transition: 0.2s ease-in;
+                user-select: none;
+                touch-action: manipulation;
 
                 img {
                     height: 30px;
@@ -48,7 +50,6 @@
                     opacity: 1;
                 }
 
-                // clicked 
                 &:active {
                     transform: scale(0.9);
                 }
