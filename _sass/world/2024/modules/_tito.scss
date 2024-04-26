@@ -20,7 +20,9 @@ $mobileWidth: 570px;
                 .tito-release--increment-quantity,
                 .tito-release--decrement-quantity {
                     a {
+                        opacity: 0.8;
                         color: var(--red);
+                        transition: all 0.15s ease;
 
                         &.--disabled {
                             color: var(--red);
@@ -31,6 +33,7 @@ $mobileWidth: 570px;
                         }
 
                         &:hover {
+                            opacity: 1;
                             color: var(--red);
                         }
                     }
@@ -82,10 +85,23 @@ $mobileWidth: 570px;
 
             // add hover interaction
             .tito-submit {
-                background: var(--red);
-                background-color: var(--red);
                 border: 0;
+                background-color: var(--white);
+                padding: 1rem 3rem;
+                border-radius: 8px;
+                color: var(--black);
+                cursor: pointer;
+                text-decoration: none;
+                transition: box-shadow 0.15s ease;
+                transition: all 0.15s ease;
+                background: var(--red);
+                color: var(--white);
                 text-transform: uppercase;
+
+                &:hover {
+                    box-shadow: 0px 4px 7px 0 rgba(0, 0, 0, 0.3);
+                    transform: translateY(-1px);
+                }
             }
         }
     }

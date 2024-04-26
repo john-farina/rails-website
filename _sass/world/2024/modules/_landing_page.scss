@@ -53,8 +53,7 @@
         max-width: 920px;
 
         .ticketTitle {
-            font-size: var(--type-x-large);
-            font-variation-settings: var(--font-weight-700);
+            padding-bottom: var(--header-and-paragraph-padding);
         }
 
         .iframeContainer {
