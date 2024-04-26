@@ -1,0 +1,82 @@
+$mobileWidth: 570px;
+
+.tito-widget {
+    .tito-widget-form {
+        padding-left: var(--space-medium);
+        padding-right: var(--space-medium);
+
+        .tito-release {
+            .tito-quantity .tito-release--increment-quantity>a,
+            .tito-quantity .tito-release--decrement-quantity>a {
+                color: var(--red);
+
+                svg {
+                    pointer-events: none;
+                }
+
+                &:hover {
+                    color: var(--red);
+                }
+            }
+
+            .tito-release-description {
+                justify-content: flex-start;
+                padding-top: 30px;
+                padding-bottom: 30px;
+
+                .tito-release--title {
+                    text-align: start;
+                    font-size: var(--type-medium);
+                    font-family: "acumin-variable", sans-serif;
+                    font-variation-settings: var(--font-weight-600);
+
+                    @media screen and (max-width: $mobileWidth) {
+                        font-variation-settings: var(--font-weight-700);
+                        text-align: center;
+                    }
+                }
+
+                @media screen and (max-width: $mobileWidth) {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+
+        .tito-times {
+            font-size: var(--type-small);
+        }
+
+        .tito-price-details-regular {
+            .tito-price {
+                font-size: var(--type-medium);
+                font-family: "acumin-variable", sans-serif;
+                font-variation-settings: var(--font-weight-500);
+                text-transform: uppercase;
+
+                @media screen and (max-width: $mobileWidth) {
+                    font-size: var(--type-large);
+                }
+            }
+        }
+
+        .tito-quantity {
+            display: flex;
+            gap: 3px;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .tito-form-actions {
+
+            // add hover interaction
+            .tito-submit {
+                background: var(--red);
+                background-color: var(--red);
+                border: 0;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
