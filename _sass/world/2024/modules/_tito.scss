@@ -1,21 +1,39 @@
 $mobileWidth: 570px;
 
 .tito-widget {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 10px;
+
     .tito-widget-form {
         padding-left: var(--space-medium);
         padding-right: var(--space-medium);
+        border-radius: 10px;
 
         .tito-release {
-            .tito-quantity .tito-release--increment-quantity>a,
-            .tito-quantity .tito-release--decrement-quantity>a {
-                color: var(--red);
+            .tito-quantity {
+                display: flex;
+                gap: 3px;
+                align-items: center;
+                justify-content: center;
 
-                svg {
-                    pointer-events: none;
-                }
+                .tito-release--increment-quantity,
+                .tito-release--decrement-quantity {
+                    a {
+                        color: var(--red);
 
-                &:hover {
-                    color: var(--red);
+                        &.--disabled {
+                            color: var(--red);
+                        }
+
+                        svg {
+                            pointer-events: none;
+                        }
+
+                        &:hover {
+                            color: var(--red);
+                        }
+                    }
                 }
             }
 
@@ -59,14 +77,6 @@ $mobileWidth: 570px;
                 }
             }
         }
-
-        .tito-quantity {
-            display: flex;
-            gap: 3px;
-            align-items: center;
-            justify-content: center;
-        }
-
 
         .tito-form-actions {
 
