@@ -13,12 +13,7 @@ permalink: /world/2024
                 Shaping the future of Ruby on Rails
             </h3>
 
-            <div class="titto-container">
-                <h3 class="ticketTitle">Tickets</h3>
-                <div class="iframeContainer">
-                    <div id="tito-widget"></div>
-                </div>
-            </div>
+            {% include world/2024/tito-widget.html %}
         </section>
     </div>
 
@@ -47,8 +42,3 @@ permalink: /world/2024
 
     {% include world/2024/sections/sponsors.html %}
 </div>
-<script>
-    window.tito = window.tito || function() { (tito.q = tito.q || []).push(arguments);};
-    // rails-world/rails-world-2024
-    tito("widget.mount", {el: "#tito-widget", event: "ultimateconf/2013"})
-</script>
