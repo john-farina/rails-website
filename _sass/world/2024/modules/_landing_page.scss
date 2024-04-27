@@ -43,28 +43,6 @@
         min-width: 500px;
     }
 
-    .titto-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 0;
-        max-width: 920px;
-
-        .ticketTitle {
-            padding-bottom: var(--header-and-paragraph-padding);
-        }
-
-        .iframeContainer {
-            width: 100%;
-            background-color: var(--white);
-            min-height: 0px;
-            border-radius: 10px;
-        }
-    }
-
-
     @media only screen and (max-width: 800px) {
         margin-top: -1rem;
         padding-top: 30px;
