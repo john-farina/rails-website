@@ -6,6 +6,23 @@
     padding: 40px 0px;
     background-color: var(--blue);
     width: 100%;
+    position: relative;
+
+    .speakerSwooshContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        .swooshContainer {
+            position: relative;
+            width: 100%;
+            background-color: var(--dark-blue);
+            height: 50%;
+        }
+    }
 
     .socialLinks {
         align-items: center;

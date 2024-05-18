@@ -16,6 +16,34 @@
         border-radius: 15px;
         flex-direction: column;
 
+        .breadCrumbsContainer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-top: -40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: white;
+            font-size: 1.7rem;
+            text-wrap: nowrap;
+            overflow: scroll;
+
+            p {
+                font-weight: 800;
+            }
+
+            @media screen and (max-width: 500px) {
+                font-size: 1.4rem;
+            }
+
+            @media screen and (max-width: 430px) {
+                font-size: 0.9rem;
+            }
+        }
+
         .topContainer {
             display: flex;
             align-items: flex-start;
@@ -161,7 +189,7 @@
                             height: 300px;
                             will-change: box-shadow;
                             transition: 0.4s ease;
-    
+
                             // desktop 
                             @media screen and (max-width: 950px) {
                                 width: 250px;
@@ -276,14 +304,26 @@
     }
 
     @media screen and (max-width: 750px) {
-        padding: 0px 0px !important;
+        padding: 0px 0px 0px 0px !important;
 
         .sessionContainer {
             width: 100%;
             border-radius: 0;
 
+            .breadCrumbsContainer {
+                top: 0;
+                left: 0;
+                padding-left: 20px;
+                margin-top: -5px !important;
+                color: rgba(0, 0, 0, 0.664);
+
+                a {
+                    color: rgba(0, 0, 0, 0.664) !important;
+                }
+            }
+
             .topContainer {
-                padding-top: 25px;
+                padding-top: 35px;
             }
 
             .bottomContainer {
