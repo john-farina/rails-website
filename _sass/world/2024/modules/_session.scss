@@ -89,7 +89,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 40px 0;
+                padding: 50px 0;
                 border-radius: 10px;
                 text-decoration: none;
 
@@ -112,7 +112,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 15px 0;
+                    padding: 25px 0;
 
                     .left {
                         width: 50%;
@@ -138,16 +138,61 @@
                             color: black;
                         }
 
-                        .speakerName {
-                            color: var(--red);
-                            font-size: var(--type-medium);
-                            font-weight: 700;
+                        .speakersTag {
+                            text-decoration: none;
+                            display: flex;
+                            flex-direction: column;
+
+                            .speakerName {
+                                color: var(--red);
+                                font-size: var(--type-medium);
+                                font-weight: 700;
+                            }
+
+                            .speakerRole {
+                                font-size: var(--type-small);
+                                font-weight: 300;
+                                color: black;
+                                margin-top: -5px;
+                            }
+
+                            &:hover {
+                                text-decoration: underline;
+                            }
                         }
 
-                        .speakerRole {
-                            font-size: var(--type-small);
-                            font-weight: 300;
-                            color: black;
+                        .socialLinksSession {
+                            align-items: center;
+                            justify-content: flex-start;
+                            display: flex;
+                            gap: 20px;
+
+                            a {
+                                will-change: transform;
+                                transition: 0.2s ease;
+
+                                svg {
+                                    width: 40px;
+                                    height: 40px;
+                                    fill: var(--purple);
+                                }
+
+                                &:hover {
+                                    transform: translateY(-1px);
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 800px) {
+                        flex-direction: column;
+                        gap: 20px;
+                        .left {
+                            width: 100%;
+                        }
+
+                        .rightSession {
+                            width: 100%;
                         }
                     }
                 }
