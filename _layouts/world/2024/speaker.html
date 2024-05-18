@@ -1,10 +1,7 @@
 ---
 layout: world/2024/default
 ---
-{% assign filteredSessions = site.world_sessions | where_exp: "session", "page.path contains session.speaker" |
-where_exp: 'item', 'item.path contains "2024"'%}
-<html lang="en" style="scroll-behavior: smooth">
-
+{% assign filteredSessions = site.world_sessions | where_exp: 'item', 'item.path contains "2024"'%}
 
 <div class="speakerPage">
     <div class="speakerCardBackground">
@@ -17,12 +14,11 @@ where_exp: 'item', 'item.path contains "2024"'%}
                 <div class="right">
                     <div>
                         <h2 class="speakerName">{{ page.first_name}} {{ page.last_name }}</h1>
-                        <p class="speakerRole">{{ page.role }}, {{ page.company }}</p>
+                            <p class="speakerRole">{{ page.role }}, {{ page.company }}</p>
                     </div>
                     {{ content }}
 
                     <div class="socialLinks">
-
                         {% if page.github %}
                         <a href="{{ page.github }}">
                             {% include world/2023/icons/github.html %}
@@ -41,24 +37,95 @@ where_exp: 'item', 'item.path contains "2024"'%}
                     </div>
                 </div>
             </div>
-            <div class="sessionsSection">
-                <h3>Sessions</h3>
-                <div class="sessionCard">
-                    <p class="sessionName">Rails World 2024 Session Name!</p>
-                    <div class="sessionTimeContainer">
-                        <p>14:15 - 14:15</p>
+            <div class="bottomSpeakersPage">
+                <div class="leftPage">
+                    <div class="sessionsSection">
+                        <h3>Session</h3>
+                        {% for session in filteredSessions %}
+                        <div 
+                            class="sessionCard" 
+                            href=""
+                            role="button" 
+                            tabindex="0" 
+                            title="{{ session.title }}"
+                            aria-label="Go to {{ session.title }} session page"
+                            onclick="openWindow(
+                                '{{ session.path }}'
+                                )
+                            "
+                            onkeydown="
+                                handleEnterOrSpaceWindowOpen(
+                                    event, 
+                                    '{{ session.path }}'
+                                )
+                            "    
+                        >
+                            <p class="sessionName">{{ session.title }}</p>
+                            <div class="sessionTimeContainer">
+                                <p>{{ session.time }}</p>
+                            </div>
+                            <div class="sessionDateContainer">
+                                <p>4th September 2024</p>
+                            </div>
+                            <div class="sessionLocationContainer">
+                                <p>{{ session.location }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- TESTING DIV -->
+                        {% if filteredSessions.size == 0 %}
+                        
+                        <div 
+                            class="sessionCard"
+                           
+                        >
+                            <p class="sessionName">Rails World 2024 Session Name!</p>
+                            <div class="sessionTimeContainer">
+                                <p>14:15 - 14:15</p>
+                            </div>
+                            <div class="sessionDateContainer">
+                                <p>4th September 2024</p>
+                            </div>
+                            <div class="sessionLocationContainer">
+                                <p>Track One</p>
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
-                    <div class="sessionDateContainer">
-                        <p>4th September 2024</p>
-                    </div>
-                    <div class="sessionLocationContainer">
-                        <p>Track One</p>
+                </div>
+                <div class="right">
+                    <div class="socialLinks">
+                        {% if page.github %}
+                        <a href="{{ page.github }}">
+                            {% include world/2023/icons/github.html %}
+                        </a>
+                        {% endif %}
+                        {% if page.linkedin %}
+                        <a href="{{ page.linkedin }}">
+                            {% include world/2023/icons/linkedin.html %}
+                        </a>
+                        {% endif %}
+                        {% if page.twitter %}
+                        <a href="{{ page.twitter }}">
+                            {% include world/2023/icons/twitter.html %}
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function openWindow(url, openTab = false) {
+        const openType = openTab ? '_blank' : '_self';
 
+        window.open(url, openType);
+    }
 
-</html>
+    function handleEnterOrSpaceWindowOpen(e, url) {
+        if (e.key === " " || e.key === "Enter" || e.key === "Spacebar") {
+            openWindow(url);
+        }
+    }
+</script>

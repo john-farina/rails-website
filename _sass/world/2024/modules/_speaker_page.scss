@@ -8,6 +8,28 @@
     height: 100%;
     min-height: 950px;
 
+    .socialLinks {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        gap: 20px;
+
+        a {
+            will-change: transform;
+            transition: 0.2s ease;
+
+            svg {
+                width: 55px;
+                height: 55px;
+                fill: var(--purple);
+            }
+
+            &:hover {
+                transform: translateY(-1px);
+            }
+        }
+    }
+
     .speakerCardBackground {
         position: relative;
         background-color: white;
@@ -62,6 +84,11 @@
                         &:hover {
                             box-shadow: 0px 0px 30px 10px var(--blue);
                         }
+
+                        @media screen and (max-width: 550px) {
+                            width: 250px;
+                            height: 250px;
+                        }
                     }
 
                 }
@@ -83,26 +110,8 @@
                     }
 
                     .socialLinks {
+                        display: none;
                         width: 100%;
-                        align-items: center;
-                        justify-content: center;
-                        display: flex;
-                        gap: 20px;
-
-                        a {
-                            will-change: transform;
-                            transition: 0.2s ease;
-
-                            svg {
-                                width: 55px;
-                                height: 55px;
-                                fill: var(--purple);
-                            }
-
-                            &:hover {
-                                transform: translateY(-1px);
-                            }
-                        }
                     }
                 }
 
@@ -118,6 +127,7 @@
                         width: 100%;
 
                         .socialLinks {
+                            display: flex;
                             gap: 10px;
                             justify-content: start;
                         }
@@ -125,54 +135,90 @@
                 }
             }
 
-            .sessionsSection {
+            .bottomSpeakersPage {
                 display: flex;
-                flex-direction: column;
-                gap: 10px;
+                align-items: flex-end;
+                justify-content: center;
                 width: 100%;
+                
+                .leftPage {
+                    width: 75%;
+                    height: 100%;
 
-                h3 {
-                    color: var(--red);
-                }
-
-                .sessionCard {
-                    position: relative;
-                    width: 100%;
-                    padding: 0px 10px;
-                    cursor: pointer;
-
-                    .sessionName {
-                        color: var(--red);
-                        font-size: var(--type-large);
-                        font-weight: 600;
-                    }
-
-                    .sessionTimeContainer,
-                    .sessionDateContainer,
-                    .sessionLocationContainer {
+                    .sessionsSection {
                         display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        width: 100%;
 
-                        p {
-                            font-size: var(--type-medium);
-                            font-weight: 800;
-                            color: var(--purple);
-                            letter-spacing: 0.03rem;
+                        h3 {
+                            color: var(--red);
+                        }
+
+                        .sessionCard {
+                            position: relative;
+                            width: 100%;
+                            padding: 0px 10px;
+                            cursor: pointer;
+
+                            .sessionName {
+                                color: var(--red);
+                                font-size: var(--type-large);
+                                font-weight: 600;
+                            }
+
+                            .sessionTimeContainer,
+                            .sessionDateContainer,
+                            .sessionLocationContainer {
+                                display: flex;
+
+                                p {
+                                    font-size: var(--type-medium);
+                                    font-weight: 800;
+                                    color: var(--purple);
+                                    letter-spacing: 0.03rem;
+                                }
+                            }
+
+                            &::after {
+                                top: 0;
+                                left: 0;
+                                margin-left: -4px;
+                                content: "";
+                                height: 100%;
+                                position: absolute;
+                                width: 4px;
+                                background-color: var(--red);
+                            }
+
+                            &:hover {
+                                background-color: rgba(black, 0.02);
+                            }
                         }
                     }
 
-                    &::after {
-                        top: 0;
-                        left: 0;
-                        margin-left: -4px;
-                        content: "";
-                        height: 100%;
-                        position: absolute;
-                        width: 4px;
-                        background-color: var(--red);
+
+                    @media screen and (max-width: 950px) { 
+                        width: 100%;
+                    }
+                }
+
+                .right {
+                    display: flex;
+                    width: 25%;
+                    height: 100%;
+
+                    .socialLinks {
+                        width: 100%;
+                        justify-content: flex-end;
                     }
 
-                    &:hover {
-                        background-color: rgba(black, 0.02);
+                    @media screen and (max-width: 950px) { 
+                        width: 0%;
+
+                        .socialLinks {
+                            display: none;
+                        }
                     }
                 }
             }
