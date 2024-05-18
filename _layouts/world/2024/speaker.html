@@ -42,6 +42,7 @@ layout: world/2024/default
                     <div class="sessionsSection">
                         <h3>Session</h3>
                         {% for session in filteredSessions %}
+                        {% assign sessionUrl = session.path | split: '/' | last | remove_first: '.md' %}
                         <div 
                             class="sessionCard" 
                             href=""
@@ -50,13 +51,13 @@ layout: world/2024/default
                             title="{{ session.title }}"
                             aria-label="Go to {{ session.title }} session page"
                             onclick="openWindow(
-                                '{{ session.path }}'
+                                '/world/2024/{{ sessionUrl }}'
                                 )
                             "
                             onkeydown="
                                 handleEnterOrSpaceWindowOpen(
                                     event, 
-                                    '{{ session.path }}'
+                                    '/world/2024/{{ sessionUrl }}'
                                 )
                             "    
                         >

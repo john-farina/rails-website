@@ -1,0 +1,66 @@
+.sessionPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0px;
+    width: 100%;
+    height: 100%;
+    min-height: 950px;
+
+    .sessionContainer {
+        position: relative;
+        background-color: var(--white);
+        width: 85%;
+        max-width: 1700px;
+        display: flex;
+        border-radius: 15px;
+        flex-direction: column;
+
+        .topContainer {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 50px 20px;
+            flex-direction: column;
+            gap: 15px;
+            padding: 60px 20px;
+
+            .sessionTitle {
+                color: var(--red);
+            }
+
+            .description {}
+
+
+            .informationContainer {
+                display: flex;
+                flex-direction: column;
+
+                .sessionTimeContainer,
+                .sessionDateContainer,
+                .sessionLocationContainer {
+                    display: flex;
+
+                    p {
+                        font-size: var(--type-large);
+                        font-weight: 800;
+                        color: var(--purple);
+                        letter-spacing: 0.03rem;
+                    }
+                }
+            }
+        }
+
+        .bottomContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px 0px;
+            border-radius: 0px 0px 10px 10px;
+            background-color: var(--blue);
+        }
+    }
+
+
+}

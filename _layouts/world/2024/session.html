@@ -1,0 +1,35 @@
+---
+layout: world/2024/default
+---
+
+{% assign filteredSpeakers = site.world_speakers | where_exp:"speaker", "speaker.path contains page.speaker" |
+where_exp: 'item', 'item.path contains "2024"'%}
+{% assign speaker = filteredSpeakers | first %}
+
+<div class="sessionPage">
+    <div class="sessionContainer">
+        <div class="topContainer">
+            <h2 class="sessionTitle">
+                {{ page.title }}
+            </h2>
+            <p class="description">
+                {{ content }}
+            </p>
+            <div class="informationContainer">
+                <div class="sessionTimeContainer">
+                    <p>{{ page.time }}</p>
+                </div>
+                <div class="sessionDateContainer">
+                    <p>4th September 2024</p>
+                </div>
+                <div class="sessionLocationContainer">
+                    <p>{{ page.location }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottomContainer">
+            <p>hello world</p>
+        </div>
+    </div>
+</div>
