@@ -13,10 +13,12 @@ title: Speakers
 <div class="speakersPageContainer">
     <div class="pageTitleContainer">
         <h1>Speakers</h1>
-        <p>Our industry's brightest speakers gathered in Toronto to share their expertise, insights, and success stories.</p>
+        <p>Our industry's brightest speakers gathered in Toronto to share their expertise, insights, and success
+            stories.</p>
     </div>
-    <div class="speakersContainer">
-        {% for speaker in keynote_speakers %}
+    <div class="bottomContainer">
+        <div class="speakersContainer">
+            {% for speaker in keynote_speakers %}
             {%
             include world/2024/speaker-card.html
             first_name=speaker.first_name
@@ -26,6 +28,7 @@ title: Speakers
             photo=speaker.image_path
             path=speaker.path
             %}
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </div>

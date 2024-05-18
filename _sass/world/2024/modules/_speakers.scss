@@ -2,6 +2,7 @@
 .speaker-cards {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     background-color: var(--blue);
     border-bottom: var(--border-style);
     overflow-y: visible;
@@ -84,26 +85,4 @@
         scroll-snap-stop: always;
         -webkit-overflow-scrolling: touch;
     }
-
-    // ! Centering for four speakers
-    // ! Remove this whole media query when more than 4 speakers
-    // @media screen and (min-width: 1350px) {
-    //     .headerContainer {
-    //         justify-content: center;
-
-    //         .textContainer {
-    //             align-items: center;
-
-    //             p {
-    //                 text-align: center;
-    //             }
-    //         }
-    //     }
-
-    //     .cardsContainer {
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //     }
-    // }
 }
