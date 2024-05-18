@@ -29,7 +29,22 @@ where_exp: 'item', 'item.path contains "2024"'%}
         </div>
 
         <div class="bottomContainer common-shape--top-white-down-left">
-            <p>hello world</p>
+            {% assign speakerUrl = speaker.path | split: '/' | last | remove_first: '.md' %}
+            <a class="speakerContainer" href="/world/2024/speakers/{{ speakerUrl }}">
+                <div class="theLine"></div>
+                <div class="speakerContent">
+                    <div class="left">
+                        <img src="{{ speaker.image_path }}" alt="{{ speaker.first_name }}'s Profile Picture">
+                    </div>
+                    <div class="rightSession">
+                        <div>
+                            <p class="speakerName">{{ speaker.first_name }} {{ speaker.last_name }}</p>
+                            <p class="speakerRole">{{ speaker.role }}{% if speaker.company %}, {{ speaker.company }}{% endif %}</p>
+                        </div>
+                        <p class="speakerDesc">{{ speaker.content }}</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </div>
