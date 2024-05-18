@@ -22,6 +22,11 @@
                 width: 55px;
                 height: 55px;
                 fill: var(--purple);
+
+                @media screen and (max-width: 800px) {
+                    width: 50px;
+                    height: 50px;
+                }
             }
 
             &:hover {
@@ -33,13 +38,19 @@
     .speakerCardBackground {
         position: relative;
         background-color: white;
-        width: 95%;
+        width: 85%;
         max-width: 1700px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 50px 0px;
+        padding: 60px 0;
         border-radius: 15px;
+        will-change: padding, transform;
+        transition: all 0.2s ease-in-out;
+
+        @media screen and (max-width: 900px) {
+            width: 95%;
+        }
 
         .theLine {
             z-index: 1;
@@ -63,10 +74,15 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
+            // background-color: cyan;
+            position: relative;
+            will-change: padding;
+            transition: padding 0.2s ease-in-out;
 
             .topSection {
                 display: flex;
                 width: 100%;
+                // background-color: mintcream;
 
                 .left {
                     display: flex;
@@ -85,6 +101,16 @@
                             box-shadow: 0px 0px 30px 10px var(--blue);
                         }
 
+                        @media screen and (max-width: 1200px) {
+                            width: 320px;
+                            height: 320px;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            width: 340px;
+                            height: 340px;
+                        }
+
                         @media screen and (max-width: 550px) {
                             width: 250px;
                             height: 250px;
@@ -100,6 +126,7 @@
                     gap: 15px;
                     align-items: flex-start;
                     justify-content: center;
+                    // background-color: oldlace;
 
                     .speakerName {
                         color: var(--red);
@@ -140,6 +167,7 @@
                 align-items: flex-end;
                 justify-content: center;
                 width: 100%;
+                position: relative;
                 
                 .leftPage {
                     width: 75%;
@@ -149,7 +177,6 @@
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
-                        width: 100%;
 
                         h3 {
                             color: var(--red);
@@ -157,7 +184,6 @@
 
                         .sessionCard {
                             position: relative;
-                            width: 100%;
                             padding: 0px 10px;
                             cursor: pointer;
 
@@ -171,12 +197,38 @@
                             .sessionDateContainer,
                             .sessionLocationContainer {
                                 display: flex;
+                                align-items: center;
+                                gap: 5px;
 
                                 p {
-                                    font-size: var(--type-medium);
-                                    font-weight: 800;
+                                    font-size: var(--type-small);
+                                    font-weight: 700;
                                     color: var(--purple);
                                     letter-spacing: 0.03rem;
+
+                                    @media screen and (max-width: 800px) {
+                                        font-size: var(--type-medium);
+                                        font-weight: 800;
+                                    }
+                                }
+
+                                svg {
+                                    width: 45px;
+                                    height: 45px;
+                                }
+                            }
+
+                            .sessionLocationContainer {
+                                margin-left: -7px;
+                                margin-top: -2px;
+
+                                svg {
+                                    width: 60px;
+                                    height: 60px;
+                                }
+
+                                p {
+                                    margin-left: -7px;
                                 }
                             }
 
@@ -215,12 +267,23 @@
 
                     @media screen and (max-width: 950px) { 
                         width: 0%;
+                        display: none;
 
                         .socialLinks {
                             display: none;
                         }
                     }
                 }
+            }
+        }
+
+        &:hover {
+            padding: 50px 0;
+            transform: translateY(-2px);
+            // box shadow here
+
+            .speakerCardContainer {
+                padding: 35px 0px;
             }
         }
     }

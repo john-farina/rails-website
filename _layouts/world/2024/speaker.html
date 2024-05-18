@@ -1,7 +1,10 @@
 ---
 layout: world/2024/default
 ---
+
+{% assign speaker_id = page.path | split: '/' | last %}
 {% assign filteredSessions = site.world_sessions | where_exp: 'item', 'item.path contains "2024"'%}
+{% assign speakerSessions = filteredSessions | where: 'speaker', speaker_id %}
 
 <div class="speakerPage">
     <div class="speakerCardBackground">
@@ -41,7 +44,7 @@ layout: world/2024/default
                 <div class="leftPage">
                     <div class="sessionsSection">
                         <h3>Session</h3>
-                        {% for session in filteredSessions %}
+                        {% for session in speakerSessions %}
                         {% assign sessionUrl = session.path | split: '/' | last | remove_first: '.md' %}
                         <div 
                             class="sessionCard" 
@@ -63,18 +66,24 @@ layout: world/2024/default
                         >
                             <p class="sessionName">{{ session.title }}</p>
                             <div class="sessionTimeContainer">
+                                {% include world/2024/icons/clock.html %}
+
                                 <p>{{ session.time }}</p>
                             </div>
                             <div class="sessionDateContainer">
+                                {% include world/2024/icons/calendar.html %}
+
                                 <p>4th September 2024</p>
                             </div>
                             <div class="sessionLocationContainer">
+                                {% include world/2024/icons/location.html %}
+
                                 <p>{{ session.location }}</p>
                             </div>
                         </div>
                         {% endfor %}
                         <!-- TESTING DIV -->
-                        {% if filteredSessions.size == 0 %}
+                        {% if speakerSessions.size == 0 %}
                         
                         <div 
                             class="sessionCard"
