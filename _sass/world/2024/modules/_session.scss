@@ -33,14 +33,23 @@
 
             p {
                 font-weight: 800;
+                font-size: 1.7rem;
             }
 
             @media screen and (max-width: 500px) {
                 font-size: 1.4rem;
+
+                p {
+                    font-size: 1.4rem;
+                }
             }
 
             @media screen and (max-width: 430px) {
-                font-size: 0.9rem;
+                font-size: 1rem;
+
+                p {
+                    font-size: 1rem;
+                }
             }
         }
 
@@ -108,6 +117,12 @@
                 padding-right: 15px;
                 padding-bottom: 30px;
             }
+
+            @media screen and (max-width: 500px) {
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 55px;
+            }
         }
 
         .bottomContainer {
@@ -132,6 +147,8 @@
                 margin-top: -90px;
             }
 
+
+
             &.common-shape--top-white-down-left {
                 &:before {
                     top: 0px;
@@ -154,6 +171,11 @@
 
                 @media screen and (max-width: 900px) {
                     padding: 50px 0;
+                }
+
+
+                @media screen and (max-width: 500px) {
+                    width: 95%;
                 }
 
                 .theLine {
@@ -224,7 +246,9 @@
                             .speakerName {
                                 color: var(--red);
                                 font-size: var(--type-large);
-                                font-weight: 700;
+                                font-weight: 800;
+                                font-style: italic;
+                                line-height: 0.9;
 
                                 @media screen and (max-width: 800px) {
                                     font-size: 2.8rem;
@@ -236,6 +260,7 @@
                                 font-weight: 300;
                                 color: black;
                                 margin-top: -5px;
+                                letter-spacing: 0px;
 
                                 @media screen and (max-width: 800px) {
                                     font-size: 1.9rem;
@@ -305,6 +330,12 @@
                 //         padding: 35px 0;
                 //     }
                 // }
+            }
+
+            @media screen and (max-width: 500px) {
+                .speakerContainer {
+                    margin-top: -20px;
+                }
             }
         }
     }
