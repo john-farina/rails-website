@@ -3,6 +3,7 @@ layout: world/2024/session
 title: Session Title 4
 speaker: tobias-lutke.md # name of md speaker file
 time: 13:30 - 14:00
+session_date: September 26th, 2024
 location: Track 2
 ---
 
