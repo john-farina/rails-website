@@ -245,10 +245,14 @@
                             &:hover {
                                 .speakerName {
                                     text-decoration: underline solid var(--red);
+                                    -webkit-text-decoration-line: underline;
+                                    -webkit-text-decoration-color: var(--red);
                                 }
 
                                 .speakerRole {
                                     text-decoration: underline solid black;
+                                    -webkit-text-decoration-line: underline;
+                                    -webkit-text-decoration-color: var(--black);
                                 }
                             }
                         }
