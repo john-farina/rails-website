@@ -77,7 +77,7 @@ layout: world/2024/default
                             <div class="sessionDateContainer">
                                 {% include world/2024/icons/calendar.html %}
 
-                                <p>4th September 2024</p>
+                                <p>{{ session.session_date }}</p>
                             </div>
                             <div class="sessionLocationContainer">
                                 {% include world/2024/icons/location.html %}
@@ -86,25 +86,6 @@ layout: world/2024/default
                             </div>
                         </div>
                         {% endfor %}
-                        <!-- TESTING DIV -->
-                        {% if speakerSessions.size == 0 %}
-                        
-                        <div 
-                            class="sessionCard"
-                           
-                        >
-                            <p class="sessionName">Rails World 2024 Session Name!</p>
-                            <div class="sessionTimeContainer">
-                                <p>14:15 - 14:15</p>
-                            </div>
-                            <div class="sessionDateContainer">
-                                <p>4th September 2024</p>
-                            </div>
-                            <div class="sessionLocationContainer">
-                                <p>Track One</p>
-                            </div>
-                        </div>
-                        {% endif %}
                     </div>
                 </div>
                 <div class="right">

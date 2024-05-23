@@ -90,7 +90,6 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
-            // background-color: cyan;
             position: relative;
             will-change: padding;
             transition: padding 0.25s ease-in-out;
@@ -98,7 +97,6 @@
             .topSection {
                 display: flex;
                 width: 100%;
-                // background-color: mintcream;
 
                 .left {
                     display: flex;
@@ -112,6 +110,8 @@
                         border-radius: 50%;
                         will-change: box-shadow;
                         transition: 0.4s ease;
+                        object-fit: cover;
+                        object-position: center;
 
                         &:hover {
                             box-shadow: 0px 0px 30px 10px var(--blue);
@@ -142,7 +142,6 @@
                     gap: 15px;
                     align-items: flex-start;
                     justify-content: center;
-                    // background-color: oldlace;
 
                     .speakerName {
                         color: var(--red);

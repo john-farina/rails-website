@@ -33,6 +33,17 @@ title: Speakers
             path=speaker.path
             %}
             {% endfor %}
+            {% for speaker in non_keynote_speakers %}
+            {%
+            include world/2024/speaker-card.html
+            first_name=speaker.first_name
+            last_name=speaker.last_name
+            role=speaker.role
+            company=speaker.company
+            photo=speaker.image_path
+            path=speaker.path
+            %}
+            {% endfor %}
         </div>
     </div>
 </div>
