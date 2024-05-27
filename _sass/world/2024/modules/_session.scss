@@ -73,6 +73,11 @@
                 flex-direction: column;
                 z-index: 6;
 
+                .placeHolderContainer {
+                    width: 100%;
+                    height: 30px;
+                }
+
                 .sessionTimeContainer,
                 .sessionDateContainer,
                 .sessionLocationContainer {

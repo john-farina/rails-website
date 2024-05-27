@@ -2,9 +2,9 @@
 layout: world/2024/session
 title: Making the best of a bad situation - Lessons from one of Intercom’s most painful outages
 speaker: miles-mcguire.md # name of md speaker file
-time: TBD
-session_date: TBD
-location: TBD
+time: 
+session_date: 
+location: 
 ---
 	
 On 22 Feb 2024 Intercom had one of its most painful outages in recent memory. The root cause? A 32-bit foreign key referencing a 64-bit primary key.

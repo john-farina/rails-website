@@ -50,40 +50,44 @@ layout: world/2024/default
                         <h3>Session</h3>
                         {% for session in speakerSessions %}
                         {% assign sessionUrl = session.path | split: '/' | last | remove_first: '.md' %}
-                        <div 
-                            class="sessionCard" 
-                            href=""
-                            role="button" 
-                            tabindex="0" 
-                            title="{{ session.title }}"
-                            aria-label="Go to {{ session.title }} session page"
-                            onclick="openWindow(
+                        {% assign hasInfo = session.time != blank and session.session_date != blank and session.location != blank %}
+                        {% if hasInfo %}
+                            {% assign className = "sessionCard" %}
+                        {% else %}
+                            {% assign className = "sessionCard noInfo" %}
+                        {% endif %}                        
+                        <div class="{{ className }}" href="" role="button" tabindex="0" title="{{ session.title }}"
+                            aria-label="Go to {{ session.title }} session page" onclick="openWindow(
                                 '/world/2024/session/{{ sessionUrl }}'
                                 )
-                            "
-                            onkeydown="
+                            " onkeydown="
                                 handleEnterOrSpaceWindowOpen(
                                     event, 
                                     '/world/2024/{{ sessionUrl }}'
                                 )
-                            "    
-                        >
-                            <p class="sessionName">{{ session.title }}</p>
+                            ">
+                            <p class="sessionName">{{ session.title }} {{hasInfo}} </p>
+                            {% if session.time %}
                             <div class="sessionTimeContainer">
                                 {% include world/2024/icons/clock.html %}
 
-                                <p>{{ session.time }}</p>
+                                <p>"{{ session.time }}"</p>
                             </div>
+                            {% endif %}
+                            {% if session.session_date %}
                             <div class="sessionDateContainer">
                                 {% include world/2024/icons/calendar.html %}
 
                                 <p>{{ session.session_date }}</p>
                             </div>
+                            {% endif %}
+                            {% if session.location %}
                             <div class="sessionLocationContainer">
                                 {% include world/2024/icons/location.html %}
 
                                 <p>{{ session.location }}</p>
                             </div>
+                            {% endif %}
                         </div>
                         {% endfor %}
                     </div>

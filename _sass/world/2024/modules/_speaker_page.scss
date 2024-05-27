@@ -202,10 +202,19 @@
                             padding: 0px 10px;
                             cursor: pointer;
 
+                            &.noInfo {
+                                padding: 10px 20px
+                            }
+
                             .sessionName {
                                 color: var(--red);
                                 font-size: var(--type-large);
                                 font-weight: 600;
+                            }
+
+                            .placeholderContainer {
+                                width: 100%;
+                                height: 20px;
                             }
 
                             .sessionTimeContainer,

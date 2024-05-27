@@ -2,9 +2,9 @@
 layout: world/2024/session
 title: Kamal 2.0 - Deploy web apps anywhere
 speaker: donal-mcbreen.md # name of md speaker file
-time: TBD
-session_date: TBD
-location: TBD
+time: 
+session_date: 
+location: 
 ---
 
 Kamal is an imperative deployment tool from 37signals for running your apps with Docker.

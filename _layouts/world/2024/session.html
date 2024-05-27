@@ -32,21 +32,39 @@ where_exp: 'item', 'item.path contains "2024"'%}
                 {{ content }}
             </p>
             <div class="informationContainer">
+                {% if page.sponsor %}
                 <div class="sessionTimeContainer">
                     {% include world/2024/icons/clock.html %}
 
                     <p>{{ page.time }}</p>
                 </div>
+                {% else %}
+                <div class="placeHolderContainer">
+                    
+                </div>
+                {% endif %}
+                {% if page.session_date %}
                 <div class="sessionDateContainer">
                     {% include world/2024/icons/calendar.html %}
 
                     <p>{{ page.session_date }}</p>
                 </div>
+                {% else %}
+                <div class="placeHolderContainer">
+                    
+                </div>
+                {% endif %}
+                {% if page.location %}
                 <div class="sessionLocationContainer">
                     {% include world/2024/icons/location.html %}
 
                     <p>{{ page.location }}</p>
                 </div>
+                {% else %}
+                <div class="placeHolderContainer">
+
+                </div>
+                {% endif %}
             </div>
         </div>
 

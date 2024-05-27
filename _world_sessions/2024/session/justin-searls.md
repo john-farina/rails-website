@@ -2,9 +2,9 @@
 layout: world/2024/session
 title: The Empowered Programmer
 speaker: justin-searls.md # name of md speaker file
-time: TBD
-session_date: TBD
-location: TBD
+time: 
+session_date: 
+location: 
 ---
 
 In 2021, DHH dubbed Rails, "The One Person Framework."
