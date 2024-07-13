@@ -1,7 +1,6 @@
 ---
 layout: world/2024/session
 title: Doors Open
-redirect_from: world/agenda/day-1/1-opening-session
 speaker:
 time: 09:00 - 10:00
 location: Sponsor Lounge

@@ -3,7 +3,7 @@ layout: world/2024/session
 title: Kamal 2.0 - Deploy web apps anywhere
 speaker: donal-mcbreen.md # name of md speaker file
 time: 13:00 - 13:30
-location: 
+location: Track 1
 running_order: 4
 ---
 
