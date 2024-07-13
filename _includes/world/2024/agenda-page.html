@@ -1,11 +1,24 @@
 {% assign pageDay = include.day %}
 
-{% assign dayZeroActive = pageDay == 0 ? 'active' : 'inactive' %}
-{% assign dayOneActive = pageDay == 1 ? 'active' : 'inactive' %}
-{% assign dayTwoActive = pageDay == 2 ? 'active' : 'inactive' %}
+{% if pageDay == 0 %}
+  {% assign dayZeroActive = 'active' %}
+{% else %}
+  {% assign dayZeroActive = 'inactive' %}
+{% endif %}
+
+{% if pageDay == 1 %}
+  {% assign dayOneActive = 'active' %}
+{% else %}
+  {% assign dayOneActive = 'inactive' %}
+{% endif %}
+
+{% if pageDay == 2 %}
+  {% assign dayTwoActive = 'active' %}
+{% else %}
+  {% assign dayTwoActive = 'inactive' %}
+{% endif %}
 
 {% assign sessions = include.sessions %}
-{% assign tracks = sessions | map: 'location' | uniq %}
 
 <div class="dayContainer">
   <div class="titleContainer">
