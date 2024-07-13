@@ -1,6 +1,6 @@
 ---
 layout: world/2024/session
-title: Keynote
+title: Closing Keynote
 speaker: aaron-patterson.md # name of md speaker file
 time: 16:30 - 17:30
 location: Track 1
